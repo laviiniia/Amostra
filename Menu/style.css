@@ -18,6 +18,7 @@ html {
 [class*="col-"] {
     float: left;
     padding: 15px;
+    backgrund-color: #000000
 }
 
 .header {
