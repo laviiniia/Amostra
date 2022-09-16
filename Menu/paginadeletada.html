@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+  <title>Pontos Turísticos | Contagem da Cultura</title>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+  body {
+    box-sizing: border-box;
+    background: #ffce6d;
+}
+
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+  [class*="col-"] {
+    float: left;
+    padding: 15px;
+}
+
+  html {
+    font-family: "Lucida Sans", sans-serif;
+}
+
+  .header {
+    background-color: #888888;
+    color: #141313;
+    padding: 15px;
+  
+}
+
+  .h1{
+    color:white;
+}
+
+  li{
+    display: inline;
+}
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+  li a {
+    color: #ffffff;
+    background: #61a6ab;
+    border-radius: 10px;
+    margin-left: 121px;
+    padding: 100px 120px;
+    text-decoration: none;
+}
+
+  li a:hover {
+    background-color: #111;
+}
+
+  button:hover, a:hover {
+    opacity: 0.7;
+}
+
+  .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+  
+  border-radius:30px;
+  box-shadow: 7px 7px 13px 0px rgba(50, 50, 50, 0.22);
+  padding: 30px;
+  margin: 20px;
+  width: 400px;
+  height: 300px;
+  transition: all 0.3s ease-out;
+  border-color: #61A6AB;
+  
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  cursor: pointer;
+}
+ 
+.card p {
+  color: #a3a5ae;
+  font-size: 16px;
+}
+ 
+.image {
+  float: right;
+  max-width: 64px;
+  max-height: 64px;
+}
+
+/* For mobile phones: */
+[class*="col-"] {
+  width: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+  /* For tablets: */
+  .col-s-1 {width: 8.33%;}
+  .col-s-2 {width: 16.66%;}
+  .col-s-3 {width: 25%;}
+  .col-s-4 {width: 33.33%;}
+  .col-s-5 {width: 41.66%;}
+  .col-s-6 {width: 50%;}
+  .col-s-7 {width: 58.33%;}
+  .col-s-8 {width: 66.66%;}
+  .col-s-9 {width: 75%;}
+  .col-s-10 {width: 83.33%;}
+  .col-s-11 {width: 91.66%;}
+  .col-s-12 {width: 100%;}
+}
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+
+  #Título{
+    color: white;
+    text-shadow: black 0.1em 0.1em 0.1em;
+    margin: 70px;
+  }
+
+  #Título2{
+    color: #ffffff;
+    text-shadow: black 0.1em 0.1em 0.2em;
+    margin-top: 70px;
+    margin-bottom: 70px;
+  }
+
+  #Subtítulo{
+    text-align: center;
+  }
+
+  .blue, .green, .red {
+    border-top: 4px solid #61A6AB;
+    border-bottom: 4px solid #61A6AB;
+    border-left: 4px solid #61A6AB;
+    border-right: 4px solid #61A6AB;
+
+    background: #ffffff;
+}
+
+  #barradenavegacao{
+    background: #2e878d;
+    padding: 10px;
+  }
+
+  body{
+  margin:0;
+  padding:0
+}
+.carrosel-wrapper{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:70vh;
+  overflow:hidden;
+  flex-direction: column;
+  width:100%;
+  
+
+}
+.carrosel-container{
+  perspective: 300px;
+  width:24rem;
+  height:13.5rem;
+  position:relative;
+  border:5px solid black;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:5px 5px 10px;
+  
+}
+
+.carrosel-container .carrosel-slider .img-item{
+  width:100%;
+  height:150%;
+}
+
+.carrosel-container .carrosel-slider{
+  display:flex;
+  transition:all .5s ;
+}
+.carrosel__btn--style{
+  width:2rem;
+  height:2rem;
+  border:none;
+  outline:none;
+  cursor:pointer;
+  position:absolute;
+   background-size:cover;
+  background-repeat:no-repeat;
+  background-position:center;
+top:40%;
+}
+.prev{ 
+  left:0%;
+  background:url(https://image.flaticon.com/icons/svg/484/484055.svg);
+ }
+.next{
+  background:url(https://image.flaticon.com/icons/svg/318/318476.svg);
+  right:0%
+}
+
+.effect_next{
+  animation:effect_next .4s 1;
+}
+@keyframes effect_next{
+  0%{
+    ransform: rotateY(0);
+  }
+  50%{
+    transform: rotateY(10deg);
+  }
+  100%{
+    transform: rotateY(0);
+  }
+}
+.effect_prev{
+  animation:effect_prev .4s 1;
+}
+@keyframes effect_prev{
+  0%{
+    ransform: rotateY(0);
+  }
+  50%{
+    transform: rotateY(-10deg);
+  }
+  100%{
+    transform: rotateY(0deg);
+  }
+}
+
+.circle-container{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  width:10rem;
+  margin-top:3%;
+  transition: all .5s;
+}
+.circle-container .circle-item{
+  width:1rem;
+  height:1rem;
+  border:1px solid black;
+  border-radius:50%;
+   transition: all .5s;
+box-shadow:1px 1px 1px ;
+  cursor:pointer;
+ 
+}
+
+
+
+
+}
+</style>
+</head>
+
+<body>
+
+<center> <h1 id="Título">CONTAGEM DA CULTURA</h1> </center>
+   
+<ul id="barradenavegacao">
+  <li><a href="estrutura do projeto.html">inicio</a></li>
+  <li><a href="página do mapa.html">Mapa</a></li>
+  <li><a href="Pontos turísticos.html">CONHEÇA A CIDADE</a></li>
+  <li><a href="sobre a cidade.html">SOBRE NÓS</a></li>
+</ul>
+
+<center> <h1 id="Título2">PONTOS TURÍSTICOS</h1> </center>
+ 
+  <h2 id="Subtítulo">TEXTO AQUI</h2>
+
+<div class="carrosel-wrapper">
+  <div class="carrosel-container">
+       <div class="carrosel-slider"></div>
+       <button class="prev carrosel__btn--style"></button>
+       <button class="next carrosel__btn--style"></button>
+  </div>
+  <div class="circle-container"></div>
+</div>
+
+<script>
+  //variaveis
+let btn_prev = document.querySelector('.prev');
+let btn_next = document.querySelector('.next');
+let carrosel_container = document.querySelector('.carrosel-container');
+let slider = document.querySelector('.carrosel-slider');
+let index = 0
+
+//troque o src para a imagem que queira adicionar no carrosel
+let suasImagens = [
+  {
+    index:0,                  src:'https://static.wixstatic.com/media/09a3d5_55fd1b81f9094845ae7e43ec23c869b6~mv2_d_3072_2048_s_2.jpg'
+  },
+  {
+    index:1,                  src:'https://images.adsttc.com/media/images/5bf2/16a3/08a5/e515/4e00/018b/newsletter/feature_image.jpg?1542592134'
+  },
+  
+  {
+    index:2,                  
+    src:'https://images.unsplash.com/photo-1483729558449-99ef09a8c325?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80'
+  },
+  {
+    index:3,                  src:'https://cdnpt01.viewbug.com/media/mediafiles/2016/03/25/64932333_medium.jpg'
+  },
+  {
+    index:4,                  src:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Igua%C3%A7u_falls1_11-11-13.JPG/512px-Igua%C3%A7u_falls1_11-11-13.JPG'
+  },
+  {
+    index:5,                  src:'https://wallpaperaccess.com/full/216113.jpg'
+  },
+  {
+    index:6,                  src:'https://wallpaperaccess.com/full/216118.jpg'
+  }
+  
+]
+
+//-------------------------------------------------------
+
+
+function eventLoaders(){
+  //adicionado os eventlisteners aos botoes e chama as funcioes
+  // de ir para proxima imagem e a animação dos botoes quando clicado
+  btn_next.addEventListener('click', function(){
+  goNext()
+  clickAnimation(btn_next)
+})
+btn_prev.addEventListener('click', function(){
+  goBack()
+   clickAnimation(btn_prev)
+})
+}
+
+eventLoaders()
+
+
+function insertImages(){
+  suasImagens.forEach(function(img){
+    let html = `<img class="img-item img-item${img.index}" src="${img.src}"/>`
+    slider.insertAdjacentHTML('beforeend',html)
+  })
+}
+insertImages()
+
+function goNext(){ 
+  let imgArr = document.querySelectorAll('.img-item')
+  //vai pra proxima imagem de acordo com o index
+  index++ 
+  if(index <= imgArr.length -1){
+    //passa o index para a função que pega o tamanho da imagem e seta
+    // quantos px o slider deve fazer o translateX
+     getWidth(index)
+     }else{
+       // se o index passado for maior que o da ultima imagem ele seta como 0
+       // fazendo assim o width ser o da primeira imagem
+       index = 0
+       getWidth(0)
+     }
+}
+
+function goBack(){
+  let imgArr = document.querySelectorAll('.img-item')
+  index--
+  if(index <= imgArr.length -1){
+    if(index < 0){
+      index = imgArr.length -1
+    getWidth(index)
+    }
+    getWidth(index)
+     }
+
+}
+
+function clickAnimation(btnClicked){
+  //adiciona a classe para fazer a animação no botão correto
+    if(btnClicked.classList.contains('next')){
+         btnClicked.classList.toggle('effect_next')
+       }else{ 
+           btnClicked.classList.toggle('effect_prev')
+       }  
+}
+
+function getWidth(param){
+  // pega o index passado e seta para pegar a imagem correta
+   let image_index = document.querySelector('.img-item'+param)
+   //pega a imagem do index passado e verifica o width dela guardando
+   //na variavel tamanho_img
+   let tamanho_img = window.getComputedStyle(image_index, null).getPropertyValue("width")
+   // converte o tamanho para numero tirando o px
+  let tamanho_number = parseInt(tamanho_img.replace('px',''))
+  // multiplica o tamanho pelo index assim se o tamanho for 400 e for a 
+  //segunda imagem, vai multiplicar 400 por 2
+  let result = tamanho_number*param
+  // o resultado da multiplicacao é quando o carrosel deve se mover
+  slider.style.transform = `translateX(-${result}px)`
+  paintCircle(index)
+   
+}
+
+function createCircles(){
+  // faz um forEach em todos os elementos do array das imagens e insere
+  // os circulos dentro do container de acordo com os index das imagens
+  let imgArr = document.querySelectorAll('.img-item')
+let circle_container =  document.querySelector('.circle-container')
+imgArr.forEach(function(item, index){
+  console.log(item)
+ item.className.split(" ")[1]
+ let html =`<div class="circle-item circle_${item.className.split(" ")[1]}"></div>`
+ circle_container.insertAdjacentHTML('beforeend',html)
+})
+  
+  //seta um evento de click para cada circulo
+  document.querySelectorAll('.circle-item').forEach(function(circleBall,index){   
+     circleBall.addEventListener('click',function(){
+       clickCircle(index)
+     })
+  })
+  //como o carrosel vai sempre carregar na primeira imagem, eu chamo
+  //a funcção que pinta as bolinhas, e passo o index da primeira imagem
+    paintCircle(0)
+}
+
+createCircles()
+
+function clickCircle(param){ 
+  // pega o index do circle quando é clicado é seta como o index global
+  // chamando a função onde será setado o width onde o carrosel deve parar
+  let newIndex = param
+  index = newIndex
+  getWidth(param)
+  paintCircle(param)
+}
+
+function paintCircle(param){
+  //limpa todos os circulos quando é clicado
+    document.querySelectorAll('.circle-item').forEach(function(circle){
+    circle.style.background = "transparent"
+  })
+  //seta penas o do index
+  document.querySelector('.circle_img-item'+param).style.background = 'lightgray'  
+  
+}
+</script>
+</body>
+</html
