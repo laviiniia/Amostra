@@ -34,19 +34,6 @@ html {
     clear: both;
     display: table;
 }
-.cardblue,
-.cardgreen,
-.cardred {
-    border-radius: 30px;
-    box-shadow: 7px 7px 13px 0px rgba(50, 50, 50, 0.22);
-    padding: 30px;
-    margin: 20px;
-    width: 335px;
-    height: 240px;
-    transition: all 0.4 ease-out;
-    border-color: #61A6AB;
-    text-align: center;
-    }
 
 .card {
     border-radius: 30px;
@@ -328,9 +315,11 @@ a:hover {
     nav {
         width: 100%;
     }
+    
     .menu {
         font-family: "Lucida Sans", sans-serif;
         font-size: 12pt;
+        grid-template-columns: auto auto;
     }
     .menu ul {
         list-style: none;
@@ -352,18 +341,7 @@ a:hover {
         background-color: transparent !important;
         cursor: pointer;
     }
-    #item1 {
-        background-color: #61A6AB;
-    }
-    #item2 {
-        background-color: #61A6AB;
-    }
-    #item3 {
-        background-color: #61A6AB;
-    }
-    #item4 {
-        background-color: #61A6AB;
-    }
+
     @media (max-width: 520px) {
         .menu ul {
             display: block;
@@ -414,10 +392,9 @@ a:hover {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    box-shadow:  0 0.6em 1.8em ;
-    
-    
+    box-shadow:  0 0.6em 1.8em ; 
 }
+
 #espaço1{
     padding-left: 120px;
     padding-right: 50px;
@@ -426,4 +403,12 @@ a:hover {
 #espaço{
     padding-left: 120px;
     padding-right: 50px;
+}
+#item{
+    background-color: #61A6AB;
+    height: 43px;
+    width: 98%;
+    margin: auto auto;
+    border-radius: 5px;
+    text-align: center;
 }
