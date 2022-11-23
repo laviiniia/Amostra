@@ -71,8 +71,8 @@ a:hover {
     overflow: hidden;
     display: grid;
     grid-template-columns: auto;
+    position: relative;
 }
-
 .box {
     margin: 0 auto;
     margin-bottom: 50px;
@@ -83,6 +83,7 @@ a:hover {
     grid-template-columns: auto auto;
 }
 
+
 img {
     position: relative;
     width: 300px;
@@ -90,27 +91,13 @@ img {
     max-height: 200px;
     margin: 0;
     left: 0;
-    animation: slide 15s ease-in infinite;   
+    display: flex;
+     
 } 
 #descricao h1 {
     margin-top: 20px;
 }
-div #slide figure img {
-    width: 20%;
-    float: left;
-}
 
-@keyframes slide{
-    0% {left: 0%}
-    20% {left: 0%}
-    25% {left: -100%}
-    45% {left: -100%}
-    50% {left: -200%}
-    70% {left: -200%}
-    75% {left: -300%}
-    95% {left: -300%}
-    100% {left: -400%}
-}
 @media only screen and (max-width: 1100px) {
     #slide{
         margin: 0 auto;
